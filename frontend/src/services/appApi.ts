@@ -4,7 +4,7 @@ import { Cart, ResultInfo } from '../interfaces';
 // create the createApi
 export const appApi = createApi({
   reducerPath: 'appApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://e-commerce-rpmj.onrender.com/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BACKEND_URL }),
   // for devlopment
   // baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8080' }),
   endpoints: builder => ({
