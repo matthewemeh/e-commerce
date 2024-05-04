@@ -4,7 +4,9 @@ import { Cart, ResultInfo } from '../interfaces';
 // create the createApi
 export const appApi = createApi({
   reducerPath: 'appApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8080' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://e-commerce-rpmj.onrender.com/' }),
+  // for devlopment
+  // baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8080' }),
   endpoints: builder => ({
     signup: builder.mutation({
       query: (user: { name: string; email: string; password: string }) => ({
