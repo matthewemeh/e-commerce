@@ -9,7 +9,7 @@ const DashboardProducts = () => {
   const user: User | null = useSelector((state: GlobalState) => state.user);
   const products: Product[] | null = useSelector((state: GlobalState) => state.products);
 
-  const [deleteProduct, { isLoading, isSuccess }] = useDeleteProductMutation();
+  const [deleteProduct, { isLoading }] = useDeleteProductMutation();
 
   const handleDeleteProduct = (id: string, userID: string) => {
     const confirmedDelete: boolean = window.confirm(

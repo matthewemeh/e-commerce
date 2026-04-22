@@ -26,7 +26,7 @@ const ProductPage = () => {
   const responsive: Responsive = {
     0: { items: 1 },
     568: { items: 2 },
-    1024: { items: 3 }
+    1024: { items: 3 },
   };
 
   const handleDragStart = (e: React.DragEvent<HTMLImageElement>): void => {
@@ -38,7 +38,7 @@ const ProductPage = () => {
       addToCart({
         productID: id,
         userID: user._id,
-        price: product.price
+        price: product.price,
       });
     } else {
       showAlert({ msg: 'An error has occured' });
@@ -49,6 +49,7 @@ const ProductPage = () => {
     return (
       product?.images.map((image: ResultInfo) => (
         <img
+          alt=''
           src={image.url}
           key={image.public_id}
           onDragStart={handleDragStart}
@@ -79,7 +80,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     if (isSuccess) showAlert({ msg: `Added ${product?.name ?? ''} to your cart` });
-  }, [isSuccess]);
+  }, [isSuccess, product?.name]);
 
   if (!product) {
     return <Loading />;

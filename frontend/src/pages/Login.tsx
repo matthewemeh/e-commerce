@@ -7,7 +7,7 @@ import { useLoginMutation } from '../services/appApi';
 const Login = () => {
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
-  const [login, { error, isError, isLoading, isSuccess }] = useLoginMutation();
+  const [login, { error, isError, isLoading }] = useLoginMutation();
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();

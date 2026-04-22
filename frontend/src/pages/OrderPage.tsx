@@ -12,12 +12,9 @@ import Loading from '../components/Loading';
 
 const OrderPage = () => {
   const user: User | null = useSelector((state: GlobalState) => state.user);
-  const products: Product[] | null = useSelector((state: GlobalState) => state.products);
 
-  const [show, setShow] = useState<boolean>(false);
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const [orderToShow, setOrderToShow] = useState<Order[]>([]);
 
   useEffect(() => {
     if (!user) return;
