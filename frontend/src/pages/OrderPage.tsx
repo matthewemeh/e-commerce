@@ -6,7 +6,7 @@ import axios from '../axios';
 import { AxiosError, AxiosResponse } from 'axios';
 
 import { showAlert } from '../utils';
-import { GlobalState, Order, Product, User } from '../interfaces';
+import { GlobalState, Order, User } from '../interfaces';
 
 import Loading from '../components/Loading';
 
@@ -33,7 +33,7 @@ const OrderPage = () => {
         console.log(err.message);
         showAlert({ msg: 'An error has occured' });
       });
-  }, []);
+  }, [user]);
 
   if (loading) {
     return <Loading />;

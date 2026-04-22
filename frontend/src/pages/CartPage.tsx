@@ -24,7 +24,7 @@ const CartPage = () => {
   const cartProducts: Product[] = useMemo(() => {
     /* filter products based on those whose ids are in the userCart(as keys) */
     return products?.filter(({ _id }) => _id in userCart) ?? [];
-  }, []);
+  }, [products]);
   const [increaseCart] = useIncreaseCartProductMutation();
   const [decreaseCart] = useDecreaseCartProductMutation();
   const [removeCart, { isLoading }] = useRemoveFromCartMutation();
